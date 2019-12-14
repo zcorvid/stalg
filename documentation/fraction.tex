@@ -1,0 +1,56 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc} % Включаем поддержку UTF8
+\usepackage[russian]{babel} % Включаем пакет для поддержки русского языка
+\usepackage{listings} % Включаем пакет для подсветки синтаксиса программного кода
+\title{Модуль fraction}
+\author{Baboon}
+\date{Декабрь 2016}
+\begin{document}
+
+\maketitle
+
+\lstset{language=C++}
+
+\section{Назначение}
+
+Шаблонный класс, реализует класс рациональной дроби --- поле рациональных дробей над кольцом, которое является шаблонным параметром.
+
+\section{Примеры}
+
+Класс рационального числа-дроби:
+
+\begin{lstlisting}
+plls::fraction<int>
+\end{lstlisting}
+
+\section{Методы}
+
+Конструкторы:
+
+\begin{lstlisting}
+plls::fraction<int> a;  // a == 0
+plls::fraction<int> b(-4);  // b == -4
+plls::fraction<int> c(2, 3);  // c == 2/3
+plls::fraction<int> d(4, -6);  // c == -2/3
+\end{lstlisting}
+
+Числитель и знаменатель дроби:
+
+\begin{lstlisting}
+plls::fraction<T>::Numerator();
+plls::fraction<T>::Denominator();
+\end{lstlisting}
+
+Арифметические операторы:
+
+\begin{lstlisting}
+const fraction<T> operator+(const fraction<T>& lhs, const fraction<T>& rhs);
+const fraction<T> operator-(const fraction<T>& lhs, const fraction<T>& rhs);
+const fraction<T> operator*(const fraction<T>& lhs, const fraction<T>& rhs);
+const fraction<T> operator/(const fraction<T>& lhs, const fraction<T>& rhs);
+\end{lstlisting}
+
+арифметические операторы работают, также, с типом $T$, допустимо неявное преобразование $T$ к plls::fraction<T>.
+
+\end{document}
+
