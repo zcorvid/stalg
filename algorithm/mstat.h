@@ -33,8 +33,11 @@ template<class T>
 void min(T *src, int N, int src_step, T *dst, int dst_step, int w)
 {
     std::deque<int> dq;
+
+    // Следующий цикл стоит вынести в функцию init для дека
     for (int i = 0; i < w; ++i)
     {
+        // Цикл while стоит вынести в отдельную функцию
         while (!dq.empty() && src[dq.back() * src_step] > src[i * src_step] )
         {
             dq.pop_back();
