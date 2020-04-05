@@ -11,6 +11,7 @@
  *                        (2) MemBuffer<double, 32> buffer(512);   // Выделено 32 double-массива по 512 ячеек каждый
  *                        (3) MemBuffer<MyClass, 8> buffer(2048);  // Выделено 8 массивов MyClass по 2048 ячеек каждый
  *
+ * >>> stalg2 <<<
  */
 
 #include <iostream>
